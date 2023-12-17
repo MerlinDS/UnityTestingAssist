@@ -1,0 +1,22 @@
+{
+  "name": "com.merlinds.unity-testing-assist",
+  "displayName": "Unity Testing Assist",
+  "version": "0.1.0",
+  "unity": "2022.3",
+  "type": "library",
+  "description": "Unity Testing Assist is a set of tools for testing Unity projects.",
+  "keywords": ["Unity", "Testing", "Test", "Tools", "Test Runner", "Unit Test"],
+  "license": "MIT",
+  "documentationUrl": "https://github.com/MerlinDS/UnityTestingAssist/blob/master/README.md",
+  "changelogUrl": "https://github.com/MerlinDS/UnityTestingAssist/releases",
+  "licensesUrl": "https://github.com/MerlinDS/UnityTestingAssist/blob/master/LICENSE",
+  "repository": {
+    "url": "https://github.com/MerlinDS/UnityTestingAssist.git",
+    "type": "git"
+  },
+  "author": {
+    "name": "MerlinDS",
+    "email": "andy.salomatin@gmail.com",
+    "url": "https://merlinds.github.io/merlinds/"
+  }
+}
