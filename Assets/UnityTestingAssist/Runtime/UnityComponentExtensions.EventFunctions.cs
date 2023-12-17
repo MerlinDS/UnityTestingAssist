@@ -111,7 +111,14 @@ namespace UnityTestingAssist.Runtime
             if (methodInfo is null)
                 throw new ArgumentException($"Method {methodName} not found in {type.Name}");
 
-            methodInfo.Invoke(component, null);
+            try
+            {
+                methodInfo.Invoke(component, null);
+            }
+            catch (TargetInvocationException e)
+            {
+                throw e.InnerException ?? e;
+            }
         }
 
         [CanBeNull]
