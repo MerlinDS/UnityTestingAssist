@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
@@ -10,7 +11,7 @@ namespace UnityTestingAssist.Tests
 {
     [TestFixture]
     [TestOf(typeof(UnityComponentExtensions))]
-    public class UnityComponentExtensionTests
+    public class LifecycleEventsExecutionTests
     {
         [Test]
         public void ExecuteAwake_When_component_has_method_Should_invoke_method() =>
@@ -154,7 +155,7 @@ namespace UnityTestingAssist.Tests
             public static MonoBehaviourTest<EmptyTestComponent> Create() =>
                 new(false);
 
-            /// <inheritdoc />
+            [ExcludeFromCodeCoverage]
             public bool IsTestFinished => true;
         }
 
@@ -182,7 +183,7 @@ namespace UnityTestingAssist.Tests
             protected void Set(IMonoBehaviourMethods mock) =>
                 _mock = mock;
 
-            /// <inheritdoc />
+            [ExcludeFromCodeCoverage]
             public bool IsTestFinished => true;
 
             private void Awake() =>
