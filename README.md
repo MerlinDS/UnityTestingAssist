@@ -11,7 +11,7 @@ You can install Unity Testing Assist using any of the following methods:
 
 ### Unity Package Manager
 ```
-https://github.com/merlinds/UnityTestingAssist.git?path=/Assets/UnityTestingAssist#v0.1.1
+https://github.com/merlinds/UnityTestingAssist.git?path=/Assets/UnityTestingAssist#v0.1.2
 ```
 
 1. In Unity, open **Window** → **Package Manager**.
