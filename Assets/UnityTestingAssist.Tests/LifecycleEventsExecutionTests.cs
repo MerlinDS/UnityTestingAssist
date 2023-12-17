@@ -126,6 +126,18 @@ namespace UnityTestingAssist.Tests
         public void ExecuteChainOfEvents_When_component_has_no_methods_Should_throw_exception() =>
             Execute_When_component_has_no_method(c => c.ExecuteAwake().ExecuteOnEnable().ExecuteStart())
                 .Should().Throw<ArgumentException>();
+        
+        [Test]
+        public void ExecuteUnityEvent_When_event_method_has_exception_Should_throw_exception()
+        {
+            //Arrange
+            var mock = Substitute.For<IMonoBehaviourMethods>();
+            mock.When(m => m.Awake()).Do(_ => throw new Exception("Test"));
+            var test = TestComponent.Create(mock);
+            Action act = () => test.component.ExecuteAwake();
+            //Act & Assert
+            act.Should().Throw<Exception>().WithMessage("Test");
+        }
 
         private static IMonoBehaviourMethods Execute_When_component_has_method(Action<Component> action)
         {
